@@ -25,3 +25,5 @@ for i in $PACKAGES; do
 	brew install $i
 done
 
+./update_conf.sh
+
