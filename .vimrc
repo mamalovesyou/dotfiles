@@ -5,19 +5,34 @@ filetype off                  " required
 " ENABLE LINE NUMBERS
 set number
 
-" Vundle plugins
+" SET 256 colors 
+set term=screen-256color
+
+" Moving line shortcuts
+" On osx Alt key dosen't work
+" <ALT+j> ==> ∆ 
+" <ALT+k> ==> ˚ 
+nnoremap ∆ :m .+1<CR>==
+nnoremap ˚ :m .-2<CR>==
+
+inoremap ∆ <Esc>:m .+1<CR>==gi
+inoremap ˚ <Esc>:m .-2<CR>==gi
+
+vnoremap ∆ :m '>+1<CR>gv=gv
+vnoremap ˚ :m '<-2<CR>gv=gv
+
+" Veundle plugins
 so ~/.vim/config/plugins.vim
+so ~/.vim/config/nerdtree.vim
 so ~/.vim/config/go.vim
+
 
 syntax on
 
 " Color scheme
 colorscheme codedark 
 
-map <C-o> :NERDTreeToggle<CR>
-
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
 " Brief help
