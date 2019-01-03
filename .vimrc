@@ -10,16 +10,16 @@ set term=screen-256color
 
 " Moving line shortcuts
 " On osx Alt key dosen't work
-" <ALT+j> ==> ∆ 
-" <ALT+k> ==> ˚ 
-nnoremap ∆ :m .+1<CR>==
-nnoremap ˚ :m .-2<CR>==
+" <ALT+j> ==> <ALT-j> 
+" <ALT+k> ==> <ALT-k> 
+nnoremap <ALT-j> :m .+1<CR>==
+nnoremap <ALT-k> :m .-2<CR>==
 
-inoremap ∆ <Esc>:m .+1<CR>==gi
-inoremap ˚ <Esc>:m .-2<CR>==gi
+inoremap <ALT-j> <Esc>:m .+1<CR>==gi
+inoremap <ALT-k> <Esc>:m .-2<CR>==gi
 
-vnoremap ∆ :m '>+1<CR>gv=gv
-vnoremap ˚ :m '<-2<CR>gv=gv
+vnoremap <ALT-j> :m '>+1<CR>gv=gv
+vnoremap <ALT-k> :m '<-2<CR>gv=gv
 
 " Veundle plugins
 so ~/.vim/config/plugins.vim
