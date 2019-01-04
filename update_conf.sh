@@ -12,7 +12,6 @@ if [ ! -f ~/.vim/bundle/Vundle.vim ]; then
 	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 
-cp -rf .vimrc ~/.vimrc
 cp -rf plugins.vim ~/.vim/config/plugins.vim
 cp -rf go.vim ~/.vim/config/go.vim
 cp -rf nerdtree.vim ~/.vim/config/nerdtree.vim
@@ -25,8 +24,10 @@ cp -rf .editorconfig ~/.editorconfig
 # Current conf is for os x so we need to update if for ubuntu
 if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 	echo "Updating bindings for Linux..."
-	grep -rl "∆" ~/.vim ~/.vimrc | xargs sed -i "s/∆/<ALT-j>/g"
-	grep -rl "˚" ~/.vim ~/.vimrc | xargs sed -i "s/˚/<ALT-k>/g"
+	cp -rf linux_vimrc ~/.vimrc
+elif [ "$(uname)" == "Darwin" ]; then
+	echo "Updating bindings for OSX"
+	cp -rf darwin_vimrc ~/.vimrc
 fi
 
 
