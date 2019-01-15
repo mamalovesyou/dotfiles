@@ -26,5 +26,8 @@ for i in $PACKAGES; do
 	brew install $i
 done
 
+# Set Zsh as default shell
+sudo -s 'echo /usr/local/bin/zsh >> /etc/shells' && chsh -s /usr/local/bin/zsh
+
 ./update_conf.sh
 
