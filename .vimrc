@@ -1,12 +1,30 @@
-set nocompatible              " be iMproved, required
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+set nocompatible
 filetype off                  " required
 
 
-" ENABLE LINE NUMBERS
-set number
+set number " ENABLE LINE NUMBERS
+set hlsearch " ENABLE highlight when search
+set term=screen-256color " SET 256 colors 
 
-" SET 256 colors 
-set term=screen-256color
+" Disable the arrow keys
+
+noremap  <Up> ""
+noremap! <Up> <Esc>
+noremap  <Down> ""
+noremap! <Down> <Esc>
+noremap  <Left> ""
+noremap! <Left> <Esc>
+noremap  <Right> ""
+noremap! <Right> <Esc>
 
 " Moving line shortcuts
 " On osx Alt key dosen't work
@@ -33,14 +51,4 @@ syntax on
 colorscheme codedark 
 
 filetype plugin indent on    " required
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 
