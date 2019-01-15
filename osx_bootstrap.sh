@@ -8,6 +8,7 @@ PACKAGES=(
 	vim
 	tmux
 	wget
+	zsh
 )
 
 echo "Starting installing packages..."
