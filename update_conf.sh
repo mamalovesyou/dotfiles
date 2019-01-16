@@ -8,32 +8,36 @@
 
 
 # Update ZSH config file .zshrc
-cp -rf .zshrc ~/.zshrc
+cp -rf .zshrc $HOME/.zshrc
 
-mkdir -p ~/.vim/bundle
-mkdir -p ~/.vim/config
+mkdir -p $HOME/.vim/bundle
+mkdir -p $HOME/.vim/config
 
-if [ ! -f ~/.vim/bundle/Vundle.vim ]; then
-	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+if [ ! -e $HOME/.vim/bundle/Vundle.vim ]; then
+	echo "Vundle.vim does not exist, we'll install it!"
+	git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 fi
 
-cp -rf plugins.vim ~/.vim/config/plugins.vim
-cp -rf go.vim ~/.vim/config/go.vim
-cp -rf python.vim ~/.vim/config/python.vim
-cp -rf nerdtree.vim ~/.vim/config/nerdtree.vim
+cp -rf plugins.vim $HOME/.vim/config/plugins.vim
+cp -rf go.vim $HOME/.vim/config/go.vim
+cp -rf python.vim $HOME/.vim/config/python.vim
+cp -rf nerdtree.vim $HOME/.vim/config/nerdtree.vim
 
-cp -rf .tmux.conf ~/.tmux.conf
+cp -rf .tmux.conf $HOME/.tmux.conf
 
-cp -rf .editorconfig ~/.editorconfig
+cp -rf .editorconfig $HOME/.editorconfig
 
 # Check OS and update bindings
 # Current conf is for os x so we need to update if for ubuntu
 if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 	echo "Updating bindings for Linux..."
-	cp -rf linux_vimrc ~/.vimrc
+	cp -rf linux_vimrc $HOME/.vimrc
 elif [ "$(uname)" == "Darwin" ]; then
 	echo "Updating bindings for OSX"
-	cp -rf darwin_vimrc ~/.vimrc
+	cp -rf darwin_vimrc $HOME/.vimrc
+
+	echo "Updating tmux config for OSX"
+	cp -rf .tmux-osx.conf $HOME/.tmux-osx.conf
 fi
 
 
