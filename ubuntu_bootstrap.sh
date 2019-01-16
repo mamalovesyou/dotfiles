@@ -11,9 +11,7 @@ sudo apt-get install -y curl
 sudo apt-get install -y git
 sudo apt-get install -y tmux
 sudo apt-get install -y vim
+sudo apt install -y zsh
 
-# Setup tmux conf
-cp .tmux.conf ~/.tmux.conf
-
-# Setup vim conf
-cp .vimrc ~/.vimrc 
+# Update conf
+./update_conf.sh
