@@ -27,7 +27,9 @@ for i in $PACKAGES; do
 done
 
 # Set Zsh as default shell
-sudo -s 'echo /usr/local/bin/zsh >> /etc/shells' && chsh -s /usr/local/bin/zsh
+sudo sh -c 'echo $(which zsh) >> /etc/shells' && chsh -s $(which zsh) 
+echo "Reboot to apply zsh as defaut" 
+# Install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 ./update_conf.sh
-
