@@ -9,6 +9,7 @@ PACKAGES=(
 	tmux
 	wget
 	zsh
+	reattach-to-user-namespace
 )
 
 echo "Starting installing packages..."
@@ -27,8 +28,10 @@ for i in $PACKAGES; do
 done
 
 # Set Zsh as default shell
-sudo sh -c 'echo $(which zsh) >> /etc/shells' && chsh -s $(which zsh) 
+ZSH_BIN="/bin/zsh"
+sudo sh -c 'echo $ZSH_BIN >> /etc/shells' && chsh -s $ZSH_BIN 
 echo "Reboot to apply zsh as defaut" 
+
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
