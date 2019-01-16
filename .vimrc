@@ -39,10 +39,11 @@ inoremap ˚ <Esc>:m .-2<CR>==gi
 vnoremap ∆ :m '>+1<CR>gv=gv
 vnoremap ˚ :m '<-2<CR>gv=gv
 
-" Veundle plugins
+" Vundle plugins
 so ~/.vim/config/plugins.vim
 so ~/.vim/config/nerdtree.vim
 so ~/.vim/config/go.vim
+so ~/.vim/config/python.vim
 
 
 syntax on

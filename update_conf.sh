@@ -20,6 +20,7 @@ fi
 cp -rf .vimrc ~/.vimrc
 cp -rf plugins.vim ~/.vim/config/plugins.vim
 cp -rf go.vim ~/.vim/config/go.vim
+cp -rf python.vim ~/.vim/config/python.vim
 cp -rf nerdtree.vim ~/.vim/config/nerdtree.vim
 
 cp -rf .tmux.conf ~/.tmux.conf
