@@ -1,14 +1,12 @@
 # Personnal bindings for zsh
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
-
-source $ZSH/oh-my-zsh.sh
-
 plugins=(
 	tmux
 	vi-mode
 	git
 )
+
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
 
 export KEYTIMEOUT=1
 
@@ -18,3 +16,6 @@ bindkey -v
 
 ZSH_TMUX_AUTOSTART=true
 ZSH_THEME="robbyrussell"
+
+# Has to be the last line
+source $HOME/.oh-my-zsh/oh-my-zsh.sh

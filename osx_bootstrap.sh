@@ -12,6 +12,8 @@ PACKAGES=(
 	reattach-to-user-namespace
 )
 
+sudo su
+
 echo "Starting installing packages..."
 
 # Check for Homebrew, install if we don't have it

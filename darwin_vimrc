@@ -39,6 +39,14 @@ inoremap ˚ <Esc>:m .-2<CR>==gi
 vnoremap ∆ :m '>+1<CR>gv=gv
 vnoremap ˚ :m '<-2<CR>gv=gv
 
+map <C-S-Tab> :tabprevious<CR>
+nmap <C-S-Tab> :tabprevious<CR>
+imap <C-S-Tab> <Esc>:tabprevious<CR>i
+
+map <C-Tab> :tabnext<CR>
+nmap <C-Tab> :tabnext<CR>
+imap <C-Tab> <Esc>:tabnext<CR>i
+
 " Vundle plugins
 so ~/.vim/config/plugins.vim
 so ~/.vim/config/nerdtree.vim
