@@ -42,3 +42,5 @@ fi
 
 
 echo "Run :PluginInstall in vim to finish"
+echo "Don't forget to set use Option as Meta key if running OSX"
+
