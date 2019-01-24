@@ -7,8 +7,8 @@ plugins=(
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-export POWERLINE=$HOME/Library/Python/2.7/lib/python/site-packages
-
+export GOPATH=$HOME/go
+export GOBIN=$HOME/go/bin
 
 export KEYTIMEOUT=1
 
