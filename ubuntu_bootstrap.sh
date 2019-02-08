@@ -12,6 +12,10 @@ sudo apt-get install -y git
 sudo apt-get install -y tmux
 sudo apt-get install -y vim
 sudo apt install -y zsh
+sudo apt install -y build-essential cmake python3-dev
+
+# install oh-my-zsh
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
 # Update conf
 ./update_conf.sh

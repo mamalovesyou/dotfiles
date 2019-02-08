@@ -21,3 +21,7 @@ ZSH_THEME="robbyrussell"
 
 # Has to be the last line
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
+
+# Fuzzy file finder
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPTS='--bind j:down,k:up'

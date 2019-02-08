@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#
+
 # Update conf for:
 #	- zsh
 #	- vim
@@ -17,6 +17,12 @@ if [ ! -e $HOME/.vim/bundle/Vundle.vim ]; then
 	echo "Vundle.vim does not exist, we'll install it!"
 	git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 fi
+
+if [ ! -d $HOME/.fzf ]; then
+	echo "fzf does not exist, we'll install it!"
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+fi
+
 cp -rf .vimrc $HOME/.vimrc
 cp -rf plugins.vim $HOME/.vim/config/plugins.vim
 cp -rf go.vim $HOME/.vim/config/go.vim
@@ -35,6 +41,11 @@ if [ "$(expr substr $(uname -s) 1 5)" == "Darwin" ]; then
 fi
 
 
-echo "Run :PluginInstall in vim to finish"
+echo "Running :PluginInstall in vim to finish"
+vim +PluginInstall +qall
+
+echo "Sourcing .zshrc"
+source ~/.zshrc
+
 echo "Don't forget to set use Option as Meta key if running OSX"
 
