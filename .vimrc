@@ -102,14 +102,8 @@ onoremap il' :<c-u>normal! F'vi'<cr>
 onoremap in" :<c-u>normal! f"vi"<cr>
 onoremap il" :<c-u>normal! F"vi"<cr>
 
-" Moving lines and blocs
-nnoremap <M-j> :m .+1<CR>==
-nnoremap <M-k> :m .-2<CR>==
-inoremap <M-j> <Esc>:m .+1<CR>==gi
-inoremap <M-k> <Esc>:m .-2<CR>==gi
-vnoremap <M-j> :m '>+1<CR>gv=gv
-vnoremap <M-k> :m '<-2<CR>gv=gv
-
+" JSX conf
+let g:jsx_ext_required = 0
 
 " Vundle plugins
 so ~/.vim/config/plugins.vim
@@ -134,14 +128,27 @@ if uname == "Darwin"
 	" Load osx conf
 	" Moving line shortcuts
 	" On osx Alt key dosen't work
-	" <ALT+j> ==> ∆
-	" <ALT+k> ==> ˚
+	" <M-j> ==> ∆
+	" <M-k> ==> ˚
 	nnoremap ∆ :m .+1<CR>==
 	nnoremap ˚ :m .-2<CR>==
 	inoremap ∆ <Esc>:m .+1<CR>==gi
 	inoremap ˚ <Esc>:m .-2<CR>==gi
 	vnoremap ∆ :m '>+1<CR>gv=gv
 	vnoremap ˚ :m '<-2<CR>gv=gv
+endif
+if uname == "Linux"
+	" Load osx conf
+	" Moving line shortcuts
+	" On osx Alt key dosen't work
+	" <M-j> ==> ∆
+	" <M-k> ==> ˚
+	nnoremap <M-j> :m .+1<CR>==
+	nnoremap <M-k> :m .-2<CR>==
+	inoremap <M-j> <Esc>:m .+1<CR>==gi
+	inoremap <M-k> <Esc>:m .-2<CR>==gi
+	vnoremap <M-j> :m '>+1<CR>gv=gv
+	vnoremap <M-k> :m '<-2<CR>gv=gv
 endif
 
 
