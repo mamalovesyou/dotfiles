@@ -17,6 +17,8 @@ Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'epilande/vim-react-snippets'
+Plugin 'epilande/vim-es2015-snippets'
 
 call vundle#end()
 filetype plugin indent on
