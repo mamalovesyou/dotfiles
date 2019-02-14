@@ -19,6 +19,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'epilande/vim-react-snippets'
 Plugin 'epilande/vim-es2015-snippets'
+Plugin 'SirVer/ultisnips'
 
 call vundle#end()
 filetype plugin indent on
