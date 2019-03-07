@@ -15,7 +15,6 @@ export KEYTIMEOUT=1
 # Use vim bindings in zsh
 bindkey -v
 
-
 ZSH_TMUX_AUTOSTART=true
 ZSH_THEME="robbyrussell"
 

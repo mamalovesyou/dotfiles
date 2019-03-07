@@ -14,6 +14,7 @@ filetype off                  " required
 set number " ENABLE LINE NUMBERS
 set hlsearch " ENABLE highlight when search
 set term=screen-256color " SET 256 colors
+set encoding=utf-8
 
 " Disable the arrow keys
 

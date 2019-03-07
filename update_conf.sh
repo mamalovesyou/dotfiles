@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Update conf for:
 #	- zsh
@@ -48,4 +48,3 @@ echo "Sourcing .zshrc"
 source ~/.zshrc
 
 echo "Don't forget to set use Option as Meta key if running OSX"
-
