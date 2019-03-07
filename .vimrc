@@ -104,6 +104,11 @@ onoremap il" :<c-u>normal! F"vi"<cr>
 
 " JSX conf
 let g:jsx_ext_required = 0
+" Snippets REACT.JS
+let g:UltiSnipsExpandTrigger="<C-l>"
+
+" Align GitHub-flavored Markdown tables
+au FileType markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
 
 " Vundle plugins
 so ~/.vim/config/plugins.vim
