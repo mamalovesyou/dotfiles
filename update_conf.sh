@@ -24,6 +24,7 @@ if [ ! -d $HOME/.fzf ]; then
 fi
 
 cp -rf .vimrc $HOME/.vimrc
+cp -R colors $HOME/.vim
 cp -rf plugins.vim $HOME/.vim/config/plugins.vim
 cp -rf go.vim $HOME/.vim/config/go.vim
 cp -rf python.vim $HOME/.vim/config/python.vim
@@ -35,7 +36,7 @@ cp -rf .editorconfig $HOME/.editorconfig
 
 # Check OS and update bindings
 # Current conf is for os x so we need to update if for ubuntu
-if [ "$(expr substr $(uname -s) 1 5)" == "Darwin" ]; then
+if [ "$(uname)" == "Darwin" ]; then
 	echo "Updating tmux config for OSX"
 	cp -rf .tmux-osx.conf $HOME/.tmux-osx.conf
 fi
