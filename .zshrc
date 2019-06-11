@@ -72,6 +72,9 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+# Start tmux
+if [ "$TMUX" = "" ]; then tmux; fi
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -80,11 +83,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
 
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
@@ -95,5 +98,8 @@ export ARCHFLAGS="-arch x86_64"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="mate ~/.zshrc"
-alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="vim ~/.zshrc"
+alias vimconfig="vim ~/.vimrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias srczsh="source ~/.zshrc"
+
