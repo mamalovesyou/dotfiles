@@ -125,7 +125,8 @@ endif
 syntax on
 
 " Color scheme
-colorscheme codedark
+set background=dark
+colorscheme solarized
 
 filetype plugin indent on
 

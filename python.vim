@@ -1,6 +1,6 @@
 " This is my python conf for vim
 " Pep8
-au BufNewFile,BufRead *.py |
+au BufNewFile, BufRead *.py |
     \ set colorcolumn=80 |
     \ set encoding=utf-8 |
     \ set tabstop=4 |
