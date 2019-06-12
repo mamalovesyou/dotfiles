@@ -21,9 +21,6 @@ PACKAGES=(
     git-flow-avh
 )
 
-# Get permissions
-sudo su
-
 # Upating brew
 brew update
 

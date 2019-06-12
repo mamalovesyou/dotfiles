@@ -35,14 +35,6 @@ cp -rf .tmux.conf $HOME/.tmux.conf
 
 cp -rf .editorconfig $HOME/.editorconfig
 
-# Check OS and update bindings
-# Current conf is for os x so we need to update if for ubuntu
-if [ "$(uname)" == "Darwin" ]; then
-	echo "Updating tmux config for OSX"
-	cp -rf .tmux-osx.conf $HOME/.tmux-osx.conf
-fi
-
-
 echo "Running :PluginInstall in vim to finish"
 vim +PluginInstall +qall
 
