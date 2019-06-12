@@ -9,6 +9,7 @@
 
 # Update ZSH config file .zshrc
 cp -rf .zshrc $HOME/.zshrc
+cp -rf aliases.sh $HOME/aliases.sh
 
 mkdir -p $HOME/.vim/bundle
 mkdir -p $HOME/.vim/config

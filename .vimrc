@@ -133,14 +133,12 @@ filetype plugin indent on
 let uname = substitute(system('uname'), '\n', '', '')
 if uname == "Darwin"
 	" Load osx conf
-	" Moving line shortcuts
-	" On osx Alt key dosen't work
-	" <M-j> ==> ∆
-	" <M-k> ==> ˚
-	nnoremap ∆ :m .+1<CR>==
+    nnoremap ∆ :m .+1<CR>==
 	nnoremap ˚ :m .-2<CR>==
+
 	inoremap ∆ <Esc>:m .+1<CR>==gi
 	inoremap ˚ <Esc>:m .-2<CR>==gi
+
 	vnoremap ∆ :m '>+1<CR>gv=gv
 	vnoremap ˚ :m '<-2<CR>gv=gv
 endif
