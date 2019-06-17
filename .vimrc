@@ -116,11 +116,19 @@ so ~/.vim/config/plugins.vim
 so ~/.vim/config/nerdtree.vim
 so ~/.vim/config/go.vim
 so ~/.vim/config/python.vim
+so ~/.vim/config/js.vim
+
+" FZF shortcut config
+nnoremap <C-p> :Files<Cr>
 
 if exists('$TMUX')
 	autocmd BufEnter * call system("tmux rename-window '" . expand("%:t") . "'")
 	autocmd VimLeave * call system("tmux setw automatic-rename")
 endif
+
+" Opening NERDTree if no file specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 syntax on
 

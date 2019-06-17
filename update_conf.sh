@@ -31,12 +31,20 @@ cp -rf go.vim $HOME/.vim/config/go.vim
 cp -rf python.vim $HOME/.vim/config/python.vim
 cp -rf nerdtree.vim $HOME/.vim/config/nerdtree.vim
 
+echo "Running :PluginInstall in vim to finish"
+vim +PluginInstall +qall
+
 cp -rf .tmux.conf $HOME/.tmux.conf
 
 cp -rf .editorconfig $HOME/.editorconfig
 
-echo "Running :PluginInstall in vim to finish"
-vim +PluginInstall +qall
+YCM_DIR=$HOME/.vim/bundle/YouCompleteMe
+if [ -d YCM_DIR ]; then
+    echo "Compile YouCompleteMe"
+    cd YCM_DIR && python3 install.py --go-completer --ts-completer --java-completer
+
+fi
+
 
 echo "Sourcing .zshrc"
 source ~/.zshrc

@@ -22,5 +22,10 @@ Plugin 'epilande/vim-es2015-snippets'
 Plugin 'SirVer/ultisnips'
 Plugin 'junegunn/vim-easy-align'
 
+" Typescript support
+Plugin 'Quramy/tsuquyomi'
+Plugin 'jason0x43/vim-js-indent'
+Plugin 'leafgarland/typescript-vim'
+
 call vundle#end()
 filetype plugin indent on

@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 #
 # Bootstrap script to set up a new OSX machine
+
+BASEDIR=$(dirname "$0")
+
 # Install brew if needed
 echo "Starting bootstrapping"
 # Check for Homebrew, install if we don't have it
@@ -19,6 +22,8 @@ PACKAGES=(
     python3
 	reattach-to-user-namespace
     git-flow-avh
+    fzf
+    cmake
 )
 
 # Upating brew
@@ -34,10 +39,26 @@ for pkg in ${PACKAGES[@]}; do
 	fi
 done
 
-
 # Clean up brew...
 echo "Cleaning up..."
 brew cleanup
+
+echo "Updating path"
+export PATH=/usr/local/share/python:$PATH
+
+if [ -x "$(go --version)" ]; then
+    echo "Installing Golang"
+    node install -g typescript
+fi
+
+
+echo "Installing Golang"
+sh $BASEDIR/go_install.sh
+
+if [ -x "$(node --version)" ]; then
+    echo "Installing typescript"
+    node install -g typescript
+fi
 
 echo "Installing cask..."
 brew install caskroom/cask/brew-cask
