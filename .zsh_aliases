@@ -4,7 +4,16 @@ alias srctmux="tmux source-file ~/.tmux.conf"
 alias srczsh="source ~/.zshrc"
 
 # Config files
-alias zshconfig="vim ~/.zshrc"
-alias vimconfig="vim ~/.vimrc"
+alias zshconf="vim ~/.zshrc"
+alias aliasconf="vim ~/.zsh_aliases"
+alias vimconf="vim ~/.vimrc"
+alias pluginconf="vim ~/.vim/config/plugins.vim"
+alias tmuxconf="vim ~/.tmux.conf"
 alias ohmyzsh="vim ~/.oh-my-zsh"
-alias sshconfig="vim ~/.ssh/config"
+alias sshconf="vim ~/.ssh/config"
+alias hostsconf="sudo vim /etc/hosts"
+alias dumpconf="cp ~/.zshrc dotfiles/.zshrc && cp ~/.vimrc dotfiles/.vimrc"
+
+# Apps
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+alias vlc="/Applications/VLC.app/Contents/MacOS/VLC"
