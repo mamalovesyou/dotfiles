@@ -3,6 +3,9 @@
 alias srctmux="tmux source-file ~/.tmux.conf"
 alias srczsh="source ~/.zshrc"
 
+# Using command lines apps
+# alias vfzf="vim $(fzf)" Need to fix it
+
 # Config files
 alias zshconf="vim ~/.zshrc"
 alias aliasconf="vim ~/.zsh_aliases"
