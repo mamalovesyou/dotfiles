@@ -20,7 +20,7 @@ PACKAGES=(
 	wget
 	zsh
     python3
-	reattach-to-user-namespace
+    go
     git-flow-avh
     fzf
     cmake
@@ -43,36 +43,25 @@ done
 echo "Cleaning up..."
 brew cleanup
 
-echo "Updating path"
+echo "Updating python path"
 export PATH=/usr/local/share/python:$PATH
 
-if [ -x "$(go --version)" ]; then
-    echo "Installing Golang"
-    node install -g typescript
-fi
-
-
-echo "Installing Golang"
-sh $BASEDIR/go_install.sh
-
-if [ -x "$(node --version)" ]; then
-    echo "Installing typescript"
-    node install -g typescript
-fi
-
 echo "Installing cask..."
-brew install caskroom/cask/brew-cask
+if brew info cask > /dev/null; then
+	echo "Cask already installed"
+else
+	brew install homebrew/cask-cask 
+fi
 
 CASKS=(
     iterm2
-    skype
     slack
-    vlc
+    visual-studio-code
 )
 
 echo "Installing cask apps..."
 for pkg in ${CASKS[@]}; do
-    if brew ls --versions ${pkg} > /dev/null; then
+    if brew cask ls --versions ${pkg} > /dev/null; then
         echo "App $pkg is installed"
 	else
 		echo "Installing app $pkg "
@@ -81,13 +70,13 @@ for pkg in ${CASKS[@]}; do
 done
 
 echo "Installing fonts..."
-brew tap caskroom/fonts
+brew tap homebrew/cask-fonts 
 FONTS=(
     font-roboto
     font-clear-sans
 )
 for pkg in ${FONTS[@]}; do
-    if brew ls --versions ${pkg} > /dev/null; then
+    if brew cask ls --versions ${pkg} > /dev/null; then
         echo "Font $pkg is installed"
 	else
 		echo "Installing  font $pkg "
@@ -113,6 +102,9 @@ ZSH_BIN="/bin/zsh"
 sudo sh -c 'echo $ZSH_BIN >> /etc/shells' && chsh -s $ZSH_BIN
 echo "Reboot to apply zsh as defaut"
 
+echo 'export ZSH_DISABLE_COMPFIX=true' >> $HOME/.zshrc
+zsh
+
 # Install oh-my-zsh
 OHMYZSH="${HOME}/.oh-my-zsh/"
 if [ ! -d "$OHMYZSH" ]; then
@@ -126,4 +118,25 @@ if [ ! -d "$POWERLINE" ]; then
     echo "Installing Powerline9k..."
     git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 fi
+
+# Updating .zshrc
+zshrc="# POWERLINE9K
+ZSH_THEME=\"powerlevel9k/powerlevel9k\"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir virtualenv vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history battery time)
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_BATTERY_VERBOSE=false
+
+# GOLANG
+export GOPATH=\"${HOME}/.go\"
+export GOROOT=\"$(brew --prefix golang)/libexec\"
+export PATH=\"$PATH:${GOPATH}/bin:${GOROOT}/bin\"
+"
+zshrc_path="${HOME}/.zshrc"
+echo "$zshrc" >> $zshrc_path 
+source $zshrc_path
+
+test -d "${GOPATH}" || mkdir "${GOPATH}"
+test -d "${GOPATH}/src/github.com" || mkdir -p "${GOPATH}/src/github.com"
+
 

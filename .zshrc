@@ -109,7 +109,3 @@ fi
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
-# Load aliases
-source  $HOME/.zsh_aliases
-
-
